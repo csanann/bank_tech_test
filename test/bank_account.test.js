@@ -29,13 +29,13 @@ describe('BankAccount', () => {
     bank_account.withdraw(500);
     expect(bank_account.getBalance()).toBe(500);
   });
-  // //withdrawing a negative number or zero is not allowed, shows message to the user
-  // test('should not allow withdrawing negative amount', () => {
-  //   const bank_account = new BankAccount();
-  //   expect(() => {
-  //     bank_account.withdraw(-100);
-  //   }).toThrow('Withdraw amount must be positive');
-  // });
+  //withdrawing a negative number or zero is not allowed, shows message to the user
+  test('should not allow withdrawing negative amount', () => {
+    const bank_account = new BankAccount();
+    expect(() => {
+      bank_account.withdraw(-100);
+    }).toThrow('Withdraw amount must be positive');
+  });
 
   // test('should not allow withdrawing zero', () => {
   //   const bank_account = new BankAccount();

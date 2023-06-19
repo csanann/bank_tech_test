@@ -13,14 +13,14 @@ describe('BankAccount', () => {
     const bank_account = new BankAccount();
     expect(() => {
       bank_account.deposit(-100);
-    }).toThrow('Deposit amount must be positive');
+    }).toThrow('Deposit amount must be positive number');
   });
 
   test('should not allow depositing zero', () => {
     const bank_account = new BankAccount();
     expect(() => {
       bank_account.deposit(0);
-    }).toThrow('Deposit amount must be positive');
+    }).toThrow('Deposit amount must be positive number');
   });
 
   test('should withdraw money from bank account', () => {
@@ -54,13 +54,13 @@ describe('BankAccount', () => {
     expect(bank_account.getBalance()).toBe(0);
   });
 
-  // //can not depositing or withdrawing non-numeric values
-  // test('should not allow depositing non-numeric values', () => {
-  //   const bank_account = new BankAccount();
-  //   expect(() => {
-  //     bank_account.deposit('abc');
-  //   }).toThrow('Deposit amount must be a number');
-  // });
+  //can not depositing or withdrawing non-numeric values
+  test('should not allow depositing non-numeric values', () => {
+    const bank_account = new BankAccount();
+    expect(() => {
+      bank_account.deposit('abc');
+    }).toThrow('Deposit amount must be positive number');
+  });
 
   // test('should not allow withdrawing non-numeric values', () => {
   //   const bank_account = new BankAccount();

@@ -8,6 +8,9 @@ class BankAccount {
   }
 
   deposit(amount) {
+    if(amount < 0) {
+      throw new Error("Deposit amount must be positive");
+    }
     this.balance += amount;
     this.transactions.push({ type: 'credit', amount, balance: this.balance, date: new Date() });
   }

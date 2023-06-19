@@ -2,7 +2,10 @@
 
 const BankAccount = require('../src/bank_account');
 
-test('should create a new bank account', () => {
-  const bank_account = new BankAccount();
-  expect(bank_account).toBeTruthy();
+describe('BankAccount', () => {
+  test('should deposit money into bank account', () => {
+    const bank_account = new BankAccount();
+    bank_account.deposit(1000);
+    expect(bank_account.getBalance()).toBe(1000);
+  });
 });

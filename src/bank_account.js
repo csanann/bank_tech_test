@@ -10,6 +10,13 @@ class BankAccount {
     this.balance += amount;
   }
 
+  withdraw(amount) {
+    if (this.getBalance() < amount) {
+      throw new Error('Insufficient balance');
+    }
+    this.balance -= amount;
+  }
+
   getBalance() {
     return this.balance;
   }

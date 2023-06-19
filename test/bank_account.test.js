@@ -62,12 +62,12 @@ describe('BankAccount', () => {
     }).toThrow('Deposit amount must be positive number');
   });
 
-  // test('should not allow withdrawing non-numeric values', () => {
-  //   const bank_account = new BankAccount();
-  //   expect(() => {
-  //     bank_account.withdraw('abc');
-  //   }).toThrow('Withdraw amount must be a number');
-  // });
+  test('should not allow withdrawing non-numeric values', () => {
+    const bank_account = new BankAccount();
+    expect(() => {
+      bank_account.withdraw('abc');
+    }).toThrow('Withdraw amount must be positive number');
+  });
 
   test('should print the bank account statement', () => {
     const bank_account = new BankAccount();

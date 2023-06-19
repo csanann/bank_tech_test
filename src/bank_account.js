@@ -16,8 +16,8 @@ class BankAccount {
   }
 
   withdraw(amount) {
-    if(amount <= 0) {
-      throw new Error("Withdraw amount must be positive");
+    if(typeof amount !== 'number' || amount <= 0) {
+      throw new Error("Withdraw amount must be positive number");
     }
     if (this.getBalance() < amount) {
       throw new Error('Insufficient balance');

@@ -16,12 +16,12 @@ describe('BankAccount', () => {
     }).toThrow('Deposit amount must be positive');
   });
 
-  // test('should not allow depositing zero', () => {
-  //   const bank_account = new BankAccount();
-  //   expect(() => {
-  //     bank_account.deposit(0);
-  //   }).toThrow('Deposit amount must be positive');
-  // });
+  test('should not allow depositing zero', () => {
+    const bank_account = new BankAccount();
+    expect(() => {
+      bank_account.deposit(0);
+    }).toThrow('Deposit amount must be positive');
+  });
 
   test('should withdraw money from bank account', () => {
     const bank_account = new BankAccount();

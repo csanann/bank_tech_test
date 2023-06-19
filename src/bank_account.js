@@ -8,7 +8,7 @@ class BankAccount {
   }
 
   deposit(amount) {
-    if(amount < 0) {
+    if(amount <= 0) {
       throw new Error("Deposit amount must be positive");
     }
     this.balance += amount;

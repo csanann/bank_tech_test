@@ -37,12 +37,12 @@ describe('BankAccount', () => {
     }).toThrow('Withdraw amount must be positive');
   });
 
-  // test('should not allow withdrawing zero', () => {
-  //   const bank_account = new BankAccount();
-  //   expect(() => {
-  //     bank_account.withdraw(0);
-  //   }).toThrow('Withdraw amount must be positive');
-  // });
+  test('should not allow withdrawing zero', () => {
+    const bank_account = new BankAccount();
+    expect(() => {
+      bank_account.withdraw(0);
+    }).toThrow('Withdraw amount must be positive');
+  });
 
   // can not withdrawing an amount that exactly equals the current balance
   test('should allow withdrawing the exact balance amount', () => {

@@ -51,7 +51,15 @@ describe('BankAccount', () => {
             bank_account.withdraw(-100);
         }).toThrow('Withdraw amount must be positive');
     });
-
+    
+    test('should not allow withdrawing more than the balance', () => {
+        const bank_account = new BankAccount();
+        bank_account.deposit(1000);
+        expect(() => {
+            bank_account.withdraw(1500);
+        }).toThrow('Insufficient balance');
+    });
+    
     test('should not allow withdrawing zero', () => {
         const bank_account = new BankAccount();
         expect(() => {

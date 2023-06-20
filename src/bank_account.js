@@ -40,7 +40,9 @@ class BankAccount {
             //and print out each line of the statement with date(dd/mm/yyyy)
             let credit = transaction.type === 'credit' ? transaction.amount.toFixed(2) : '';
             let debit = transaction.type == 'debit' ? transaction.amount.toFixed(2) : '';
-            console.log(`${transaction.date.toLocaleDateString()}  ||  ${credit}  ||  ${debit}  ||  ${transaction.balance.toFixed(2)}`);
+            //use en-GB locale to get dd/mm/yyyy date format
+            let date = transaction.date.toLocaleDateString('en-GB');
+            console.log(`${date}  ||  ${credit}  ||  ${debit}  ||  ${transaction.balance.toFixed(2)}`);
         }
     }
 }

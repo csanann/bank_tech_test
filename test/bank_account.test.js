@@ -2,7 +2,22 @@
 
 const BankAccount = require('../src/bank_account');
 
+//I use 'new Date()' and here will mock this date in the tests 
+//to ensure the output of 'printStatement' method is predictable and can be tested properly.
+//by using Jest's 'mockImplementation' to mock the current date
+const CURRENT_DATE = new Date('2023-01-14');
+
 describe('BankAccount', () => {
+    beforeEach(() => {
+        //mock the current date
+        global.Date = class extends Date {
+            constructor() {
+                super();
+                return CURRENT_DATE; 
+            }
+        };
+    });
+
     test('should deposit money into bank account', () => {
         const bank_account = new BankAccount();
         bank_account.deposit(1000);
@@ -79,8 +94,8 @@ describe('BankAccount', () => {
         bank_account.printStatement();
         //check if it called with the expected arguments or not
         expect(consoleSpy).toHaveBeenCalledWith('date  ||  credit  ||  debit  ||  balance');
-        expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('500.00  ||  2500.00'));
-        expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('  ||  2000.00  ||  '));
-        expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('  ||  1000.00  ||  '));
+        expect(consoleSpy).toHaveBeenCalledWith('14/01/2023  ||    ||  500.00  ||  2500.00');
+        expect(consoleSpy).toHaveBeenCalledWith('14/01/2023  ||  2000.00  ||    ||  3000.00');
+        expect(consoleSpy).toHaveBeenCalledWith('14/01/2023  ||  1000.00  ||    ||  1000.00');
     });
 });

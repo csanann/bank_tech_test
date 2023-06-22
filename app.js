@@ -1,6 +1,5 @@
 //file: app.js
 
-// file: app.js
 
 const BankTransaction = require('./src/bank_transaction');
 const BankStatement = require('./src/bank_statement');

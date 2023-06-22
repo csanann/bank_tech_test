@@ -1,4 +1,4 @@
-// file: app.js
+// file: index.js
 
 const readline = require('readline');
 const BankTransaction = require('./src/bank_transaction');

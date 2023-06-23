@@ -14,29 +14,29 @@ const bankTransaction = new BankTransaction();
 const askQuestion = () => {
     rl.question('What would you like to do? (deposit, withdraw, print, exit): ', (answer) => {
         switch(answer.toLowerCase()) {
-            case 'deposit':
-                rl.question('How much would you like to deposit?: ', (amount) => {
-                    bankTransaction.deposit(Number(amount));
-                    askQuestion();
-                });
-                break;
-            case 'withdraw':
-                rl.question('How much would you like to withdraw?: ', (amount) => {
-                    bankTransaction.withdraw(Number(amount));
-                    askQuestion();
-                });
-                break;
-            case 'print':
-                const bankStatement = new BankStatement(bankTransaction.transactions);
-                bankStatement.printStatement();
+        case 'deposit':
+            rl.question('How much would you like to deposit?: ', (amount) => {
+                bankTransaction.deposit(Number(amount));
                 askQuestion();
-                break;
-            case 'exit':
-                rl.close();
-                break;
-            default:
-                console.log('Invalid command');
+            });
+            break;
+        case 'withdraw':
+            rl.question('How much would you like to withdraw?: ', (amount) => {
+                bankTransaction.withdraw(Number(amount));
                 askQuestion();
+            });
+            break;
+        case 'print':
+            const bankStatement = new BankStatement(bankTransaction.transactions);
+            bankStatement.printStatement();
+            askQuestion();
+            break;
+        case 'exit':
+            rl.close();
+            break;
+        default:
+            console.log('Invalid command');
+            askQuestion();
         }
     });
 };

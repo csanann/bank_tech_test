@@ -101,7 +101,7 @@ Before review:
 Only Class BankAccount
 
 '''
-![System in use](./src/bank_tech.png)
+![System in use](./images/bank_tech.png)
 '''
 
 After review: app.js is a simple file(hardcode) to run the application with Node
@@ -109,14 +109,14 @@ After review: app.js is a simple file(hardcode) to run the application with Node
 After splitting, so we have BankTransaction and BankStatement classes.
 
 '''
-![System in use](./src/bank_tech_app.png)
+![System in use](./images/bank_tech_app.png)
  '''
 
  This is index.js which has the interactive CLI, users can use the application.
 
 
  '''
-![System in use](./src/bank_tech_index.png)
+![System in use](./images/bank_tech_index.png)
 
 
 ## License

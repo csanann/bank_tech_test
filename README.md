@@ -19,13 +19,23 @@ The requirement for this project are:
 ```
 ## How to approach or solve the problem:
 ```
-1. Create test cases: write test cases for bank account operations that contains deposit, withdrawal, and printing a bank statement. Use Jest's expect and toThrow for testing expected outcomes and exceptions respectively.
-2. Setup Mock Date: Use Jest's mockImplementation to mock the current date, to ensure the predictability of the tests' outcome.
-3. Write code BankAccount class: In Node.js, the class should contain methods to handle transaction history and exception cases.
-4. Implement Transaction Logging: log the transaction in an array with details  like type of transaction (debit/credit), amount, balance, and date, whenever a deposit or withdrawal is made.
-5. Create statement printer: the printStatement method should print the bank transactions out in the required format and reverse the transaction array to show the most recent transactions first.
-6. Run the test(s): use Jest to run the test(s), if they all pass(the implement is correct), if not pass, debug and adjust the code based on failed test cases.
-7. Interact with the code: Via REPL like Node at the terminal. Test the deposit, withdrawal, and printStatement methods to verify their functionality.
+1. **Create test cases:** Write test cases for bank account operations that include deposit, withdrawal, and printing a bank statement. Use Jest's `expect` and `toThrow` for testing expected outcomes and exceptions, respectively.
+
+2. **Setup Mock Date:** Use Jest's `mockImplementation` to mock the current date, ensuring the predictability of the tests' outcome.
+
+3. **Write code for BankTransaction class:** The BankTransaction class should contain methods to handle deposit and withdrawal transactions. Each transaction should update the balance and log the transaction (type, amount, balance, and date) in a transaction array.
+
+4. **Write code for BankStatement class:** The BankStatement class should take the array of transactions and include a `printStatement` method that prints the transactions in a specific format. The transactions should be printed in reverse order to show the most recent transactions first.
+
+5. **Integrate BankTransaction and BankStatement classes:** In an `app.js` file, demonstrate how these classes interact by creating a new BankTransaction, making a series of deposits and withdrawals, creating a new BankStatement with the transaction history, and printing the bank statement. 
+
+6. **Create Interactive Terminal Application:** In an `index.js` file, use Node.js's `readline` module to create a command-line interface that lets users interactively deposit, withdraw, and print a bank statement. This simulates a real-world banking application.
+
+7. **Run the test(s):** Use Jest to run the test(s). If all tests pass, the implementation is correct. If not, debug and adjust the code based on the failed test cases.
+
+8. **Manually test the application:** In addition to running automated tests, interact with the code via a Node.js terminal or other REPL. Test the deposit, withdrawal, and printStatement methods to verify their functionality.
+
+By following these steps, we ensure a Test-Driven Development (TDD) approach that makes the code more robust, as well as an interactive application that can be used directly from the command line.
 
 ```
 ## Getting started
@@ -95,24 +105,15 @@ The 'BankAccount' class has two fields-balance(a number)and transactions(an arra
 
 For a visual overview of the system in action, refer to the following screenshots:+1: :pound: :moneybag:
 
-'''
-
-Before review:
-Only Class BankAccount
-
-'''
-![System in use](./images/bank_tech.png)
-'''
-
 After review: app.js is a simple file(hardcode) to run the application with Node
 
-After splitting, so we have BankTransaction and BankStatement classes.
 
 '''
 ![System in use](./images/bank_tech_app.png)
  '''
 
- This is index.js which has the interactive CLI, users can use the application.
+
+ This is index.js which has the interactive CLI.
 
 
  '''

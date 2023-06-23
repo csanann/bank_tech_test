@@ -94,16 +94,27 @@ The 'BankAccount' class has two fields-balance(a number)and transactions(an arra
 ## Screenshots 
 
 For a visual overview of the system in action, refer to the following screenshots:+1: :pound: :moneybag:
+
 '''
+
 Before review:
+Only Class BankAccount
+
 '''
 ![System in use](./src/bank_tech.png)
 '''
+
 After review: app.js is a simple file(hardcode) to run the application with Node
+
+After splitting, so we have BankTransaction and BankStatement classes.
+
 '''
 ![System in use](./src/bank_tech_app.png)
  '''
- This is index.js which has the interactive CLI
+
+ This is index.js which has the interactive CLI, users can use the application.
+
+
  '''
 ![System in use](./src/bank_tech_index.png)
 

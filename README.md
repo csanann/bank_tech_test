@@ -1,10 +1,12 @@
 # Bank Account Transaction System :tada:
 
-This is a very simple account transaction system written in Node.js. The system allows users to make deposits and withdrawals and the ability to print the transaction statement.
+This is a very simple account transaction system written in Node.js. 
+The system allows users to make deposits and withdrawals and the ability to print the transaction statement.
 
 ## Overview
 
-The Bank Account Transaction System aims to emulate simple banking operations. It is designed as a helpful tool for users who want to manage their personal finances or developers seeking to understand basic banking functionality.
+The Bank Account Transaction System aims to emulate simple banking operations. 
+It is designed as a helpful tool for users who want to manage their personal finances or developers seeking to understand basic banking functionality.
 ```
 The requirement for this project are:
 1. Implement a REPL interaction
@@ -19,23 +21,46 @@ The requirement for this project are:
 ```
 ## How to approach or solve the problem:
 ```
-1. **Create test cases:** Write test cases for bank account operations that include deposit, withdrawal, and printing a bank statement. Use Jest's `expect` and `toThrow` for testing expected outcomes and exceptions, respectively.
+1. Create test cases:
+Write test cases for bank account operations that include deposit, 
+withdrawal, and printing a bank statement. Use Jest's `expect` and `toThrow` 
+for testing expected outcomes and exceptions, respectively.
 
-2. **Setup Mock Date:** Use Jest's `mockImplementation` to mock the current date, ensuring the predictability of the tests' outcome.
+2. Setup Mock Date: 
+Use Jest's `mockImplementation` to mock the current date, 
+ensuring the predictability of the tests' outcome.
 
-3. **Write code for BankTransaction class:** The BankTransaction class should contain methods to handle deposit and withdrawal transactions. Each transaction should update the balance and log the transaction (type, amount, balance, and date) in a transaction array.
+3. Write code for BankTransaction class:
+The BankTransaction class should contain methods to handle deposit 
+and withdrawal transactions. Each transaction should update the balance 
+and log the transaction (type, amount, balance, and date) in a transaction array.
 
-4. **Write code for BankStatement class:** The BankStatement class should take the array of transactions and include a `printStatement` method that prints the transactions in a specific format. The transactions should be printed in reverse order to show the most recent transactions first.
+4. Write code for BankStatement class: 
+The BankStatement class should take the array of transactions 
+and include a `printStatement` method that prints the transactions in a specific format. 
+The transactions should be printed in reverse order to show the most recent transactions first.
 
-5. **Integrate BankTransaction and BankStatement classes:** In an `app.js` file, demonstrate how these classes interact by creating a new BankTransaction, making a series of deposits and withdrawals, creating a new BankStatement with the transaction history, and printing the bank statement. 
+5. Integrate BankTransaction and BankStatement classes: 
+In an `app.js` file, demonstrate how these classes interact by creating 
+a new BankTransaction, making a series of deposits and withdrawals, 
+creating a new BankStatement with the transaction history, and printing the bank statement. 
 
-6. **Create Interactive Terminal Application:** In an `index.js` file, use Node.js's `readline` module to create a command-line interface that lets users interactively deposit, withdraw, and print a bank statement. This simulates a real-world banking application.
+6. Create Interactive Terminal Application: 
+In an `index.js` file, use Node.js's `readline` module to create a command-line interface 
+that lets users interactively deposit, withdraw, and print a bank statement. 
+This simulates a real-world banking application.
 
-7. **Run the test(s):** Use Jest to run the test(s). If all tests pass, the implementation is correct. If not, debug and adjust the code based on the failed test cases.
+7. Run the test(s): 
+Use Jest to run the test(s). If all tests pass, the implementation is correct. 
+If not, debug and adjust the code based on the failed test cases.
 
-8. **Manually test the application:** In addition to running automated tests, interact with the code via a Node.js terminal or other REPL. Test the deposit, withdrawal, and printStatement methods to verify their functionality.
+8. Manually test the application: 
+In addition to running automated tests, interact with the code via a Node.js terminal 
+or other REPL. Test the deposit, withdrawal, and printStatement methods to verify their functionality.
 
-By following these steps, we ensure a Test-Driven Development (TDD) approach that makes the code more robust, as well as an interactive application that can be used directly from the command line.
+By following these steps, 
+we ensure a Test-Driven Development (TDD) approach that makes the code more robust, 
+as well as an interactive application that can be used directly from the command line.
 
 ```
 ## Getting started
@@ -85,7 +110,8 @@ npx jest or npm test
 
 ## Design
 
-The codebase consists of a single class, 'BankAccount', responsible for maintaining the balance and transaction history. It handles deposits, withdrawals, balance checks and printing of statements.
+The codebase consists of a single class, 'BankAccount', responsible for maintaining the balance and transaction history. 
+It handles deposits, withdrawals, balance checks and printing of statements.
 
 The class diagram would look like this:
 ```
@@ -99,7 +125,8 @@ BankAccount
 - printStatement(): void
 ```
 
-The 'BankAccount' class has two fields-balance(a number)and transactions(an array of objects). It has four methods for handling the deposits, withdrawals, balance checking, and printing the statement.
+The 'BankAccount' class has two fields-balance(a number)and transactions(an array of objects). 
+It has four methods for handling the deposits, withdrawals, balance checking, and printing the statement.
 
 ## Screenshots 
 
